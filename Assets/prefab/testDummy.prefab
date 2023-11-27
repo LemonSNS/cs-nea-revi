@@ -67,8 +67,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 1|5
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 1e71f63503e669e42926cb75431344a3, type: 2}
-  m_sharedMaterial: {fileID: 6156452356572971407, guid: 1e71f63503e669e42926cb75431344a3, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4e63a70e26969b74ebb4b605a8a6dbdf, type: 2}
+  m_sharedMaterial: {fileID: 8337034480093173906, guid: 4e63a70e26969b74ebb4b605a8a6dbdf, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -396,6 +396,7 @@ MonoBehaviour:
   characterID: 0
   gridPosition: {x: 10, y: 3}
   playerTeam: 0
+  deck: []
 --- !u!1 &6678086935875858527
 GameObject:
   m_ObjectHideFlags: 0
@@ -494,8 +495,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 3|3
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 1e71f63503e669e42926cb75431344a3, type: 2}
-  m_sharedMaterial: {fileID: 6156452356572971407, guid: 1e71f63503e669e42926cb75431344a3, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4e63a70e26969b74ebb4b605a8a6dbdf, type: 2}
+  m_sharedMaterial: {fileID: 8337034480093173906, guid: 4e63a70e26969b74ebb4b605a8a6dbdf, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -628,8 +629,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 1000
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 1e71f63503e669e42926cb75431344a3, type: 2}
-  m_sharedMaterial: {fileID: 6156452356572971407, guid: 1e71f63503e669e42926cb75431344a3, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 4e63a70e26969b74ebb4b605a8a6dbdf, type: 2}
+  m_sharedMaterial: {fileID: 8337034480093173906, guid: 4e63a70e26969b74ebb4b605a8a6dbdf, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

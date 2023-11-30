@@ -8,6 +8,7 @@ public class Card : MonoBehaviour
     public int damage;
     public int cost;
     public Character target;
+    public CardState state;
 
     public void cardPlayed(){
         for (int i = Mathf.FloorToInt(owner.gridPosition.x); i< owner.combatGrid.width; i++){

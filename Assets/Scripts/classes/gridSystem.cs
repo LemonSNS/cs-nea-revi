@@ -34,7 +34,7 @@ public class Grid
         Debug.DrawLine(getWorldPosition(new Vector2(width, 0)), getWorldPosition(new Vector2(width, height)), Color.black, 10000f);
 
     }
-//to be honest, this method may be completely unnecessary, since the grid will never change in size, but who knows.
+    
     public Vector3 getWorldPosition(Vector2 gridPosition){
         return new Vector3(gridPosition.x,gridPosition.y) * squareSize + gridStartPosition;
     }

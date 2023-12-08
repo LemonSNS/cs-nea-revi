@@ -9,8 +9,16 @@ public class activeCharacterController : MonoBehaviour
     public bool allowActiveCharacterChange;
     private Vector2 initialGridPosition;
     private Vector2 finalGridPosition;
+    private Vector3 mouseWorldPosition;
+    private Vector3 mouseGridPosition;
+    private Character tempCharacter;
+
+
     
     void Start(){
+        if (Instance != null){
+            Debug.Log("More than one activeCharacterController active. What did you do??? Continued playing may break the game.");
+        }
         Instance = this;
     }
 
@@ -46,5 +54,16 @@ public class activeCharacterController : MonoBehaviour
                     combatGridManager.Instance.moveCharacter(initialGridPosition, finalGridPosition, activeCharacter);
                 }
             }
+        
+        if (allowActiveCharacterChange){
+            if (Input.GetMouseButtonDown(0)){
+                mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                mouseGridPosition = activeCharacter.combatGrid.getGridPosition(mouseWorldPosition);
+                tempCharacter = activeCharacter.combatGrid.getTile(mouseGridPosition).getCharacter();
+                if (tempCharacter.playerTeam == true){
+                    activeCharacter = tempCharacter;
+                }
+            }
+        }
     }
 }

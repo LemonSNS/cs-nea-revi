@@ -4368,6 +4368,18 @@ PrefabInstance:
       propertyPath: m_hasFontAssetChanged
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6422617396728290988, guid: 768e1ccc2efba8245ad31d797c5b8434, type: 3}
+      propertyPath: m_Color.b
+      value: 0.19215688
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422617396728290988, guid: 768e1ccc2efba8245ad31d797c5b8434, type: 3}
+      propertyPath: m_Color.g
+      value: 0.227451
+      objectReference: {fileID: 0}
+    - target: {fileID: 6422617396728290988, guid: 768e1ccc2efba8245ad31d797c5b8434, type: 3}
+      propertyPath: m_Color.r
+      value: 0.8470589
+      objectReference: {fileID: 0}
     - target: {fileID: 8104342157335913140, guid: 768e1ccc2efba8245ad31d797c5b8434, type: 3}
       propertyPath: m_Name
       value: betaDummy

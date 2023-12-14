@@ -14,7 +14,7 @@ public class Character : MonoBehaviour
     [SerializeField] private TMP_Text healthCounter;
     [SerializeField] private TMP_Text momentumCounter;
     [SerializeField] private TMP_Text energyCounter;
-    private float moveSpeed = 5f;
+    private float moveSpeed = 12f;
     public Transform movePoint;
     public int characterID = 0;
     public Vector2 gridPosition;
@@ -37,9 +37,9 @@ public class Character : MonoBehaviour
         movePoint.parent = null;
         combatGrid = combatGridManager.Instance.combatGrid;
         gridPosition = combatGrid.getGridPosition(transform.position);
+        Debug.Log(gridPosition);
+        Debug.Log(this);
         combatGridManager.Instance.setCharacterToTile(gridPosition, this);
-
-
     }
 
     // Update is called once per frame
@@ -49,7 +49,6 @@ public class Character : MonoBehaviour
         momentumCounter.text = $"{momentum}";
         energyCounter.text = $"{energy}";   
         transform.position = Vector3.MoveTowards(transform.position, movePoint.position, moveSpeed*Time.deltaTime);
-
     }
 
     private void combatPhaseChanged(combatState phase){

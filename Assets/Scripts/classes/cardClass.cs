@@ -22,6 +22,9 @@ public class Card : MonoBehaviour
             owner.energy -= cost;
         }
     }
+    public void OnMouseOver(){
+        
+    }
 }
 
 public enum cardLocation{

@@ -12,8 +12,7 @@ public class activeCharacterController : MonoBehaviour
     private Vector3 mouseWorldPosition;
     private Vector3 mouseGridPosition;
     private Character tempCharacter;
-
-    void Start(){
+    void Awake(){
         if (Instance != null){
             Debug.Log("More than one activeCharacterController active. What did you do??? Continued playing may break the game.");
         }
@@ -58,9 +57,16 @@ public class activeCharacterController : MonoBehaviour
             if (Input.GetMouseButtonDown(0)){ // note to self: the editor reports an error if you click on an empty tile, be cause the tile contains "null" character.
                 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 mouseGridPosition = activeCharacter.combatGrid.getGridPosition(mouseWorldPosition);
-                Debug.Log(mouseGridPosition);
+                if (mouseGridPosition.x < 0 || mouseGridPosition.y < 0 || mouseGridPosition.x >= activeCharacter.combatGrid.width || mouseGridPosition.y >= activeCharacter.combatGrid.height){
+                    Debug.Log("Invalid Grid Position on mouse.");
+                    return;
+                }
                 tempCharacter = activeCharacter.combatGrid.getTile(mouseGridPosition).getCharacter();
-                if (tempCharacter.playerTeam == true){
+                if (tempCharacter == null){
+                    Debug.Log("Empty Tile.");
+                }
+                else if (tempCharacter.playerTeam == true){
+                    Debug.Log("activeCharacter updated.");
                     activeCharacter = tempCharacter;
                 }
             }

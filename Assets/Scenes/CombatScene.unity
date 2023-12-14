@@ -202,7 +202,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.49803922, g: 0.49803922, b: 0.49803922, a: 1}
     m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
     m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 1, g: 1, b: 1, a: 0.5019608}
@@ -676,7 +676,7 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.49803922, g: 0.49803922, b: 0.49803922, a: 1}
     m_PressedColor: {r: 1, g: 1, b: 1, a: 1}
     m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
     m_DisabledColor: {r: 1, g: 1, b: 1, a: 0.5019608}
@@ -1020,8 +1020,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 406795030}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.5, y: 0.5, z: -24.896265}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 8.5, y: 0.5, z: -24.896267}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1290,12 +1290,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 605458586}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.570236, y: -1.0273745, z: -1.2645811}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -18.233368, y: -759.20685, z: 2.0565898}
+  m_LocalScale: {x: 5.4, y: 5.4, z: 5.4}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1124562850}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &605458588
 MonoBehaviour:
@@ -1481,6 +1481,7 @@ RectTransform:
   - {fileID: 289871354}
   - {fileID: 362905791}
   - {fileID: 345203937}
+  - {fileID: 605458587}
   m_Father: {fileID: 1838635650}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -4397,14 +4398,13 @@ PrefabInstance:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 180760305}
+  - {fileID: 406795032}
+  - {fileID: 1921132188}
   - {fileID: 1838635650}
-  - {fileID: 495852183}
   - {fileID: 8531183914232262591}
   - {fileID: 477105670}
-  - {fileID: 180760305}
-  - {fileID: 519420032}
-  - {fileID: 1921132188}
-  - {fileID: 406795032}
-  - {fileID: 1163223066}
   - {fileID: 77992988754915568}
-  - {fileID: 605458587}
+  - {fileID: 1163223066}
+  - {fileID: 519420032}
+  - {fileID: 495852183}

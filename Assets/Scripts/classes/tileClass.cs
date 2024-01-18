@@ -8,20 +8,16 @@ public class Tile : MonoBehaviour
 {
     private Grid gridSystem;
     private Vector2 gridPosition;
-    private GameObject tile;
-    private Character character;
-    private TMP_Text debugDisplay;
-    private SpriteRenderer renderer;
-    private Color activeCharacterColor = new Color (0f, 0.3f, 1f, 1f);
-    private Color enemyCharacterColor = new Color (1f, 0f, 0f, 1f);
-    private Color allyCharacterColor = new Color(0f, 1f, 0f, 1f);
-    private Color nullColor = new Color(1f, 1f, 1f, 1f);
+    [SerializeField] private Character character;
+    [SerializeField] new private SpriteRenderer renderer;
+    private static Color activeCharacterColor = new Color (0f, 0.3f, 1f);
+    private static Color enemyCharacterColor = new Color (1f, 0f, 0f);
+    private static Color allyCharacterColor = new Color(0f, 1f, 0f);
+    private static Color nullColor = new Color(1f, 1f, 1f);
 
-    public Tile(Grid gridSystem, Vector2 gridPosition, GameObject tile){
+    public Tile(Grid gridSystem, Vector2 gridPosition){
         this.gridSystem = gridSystem;
         this.gridPosition = gridPosition;
-        this.tile = tile;
-        this.renderer = tile.GetComponent<SpriteRenderer>();
     }
 
     public Character getCharacter(){
@@ -31,8 +27,11 @@ public class Tile : MonoBehaviour
     public void setCharacter(Character character){
         Debug.Log(character);
         this.character = character;
+    }
+
+    void Update()
+    {
         if (character == null){
-            Debug.Log("Successfully nulled.");
             renderer.color = nullColor;
         }
         else if (character == activeCharacterController.Instance.activeCharacter){

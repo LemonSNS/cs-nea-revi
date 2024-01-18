@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1258291311439223242}
   - component: {fileID: 6561423568731557757}
+  - component: {fileID: -8704737913281111197}
   m_Layer: 0
   m_Name: combatTile
   m_TagString: Untagged
@@ -84,3 +85,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &-8704737913281111197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9127363554649524091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03eed38c657e2ea4bb1338dcd29966fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 0}
+  renderer: {fileID: 6561423568731557757}

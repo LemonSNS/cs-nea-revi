@@ -25,9 +25,8 @@ public class Grid
                 Debug.DrawLine(getWorldPosition(new Vector2(x, y)), getWorldPosition(new Vector2(x, y + 1)), Color.black, 10000f);
                 Debug.DrawLine(getWorldPosition(new Vector2(x, y)), getWorldPosition(new Vector2(x + 1, y)), Color.black, 10000f);
                 
-                tempTile = GameObject.Instantiate(tile, getWorldPosition(new Vector2(x,y)) + new Vector3(.5f, .5f, 0), Quaternion.identity);
-                tempTile.name = $"Tile {x} {y}";
-                tileArray[x,y] = new Tile(this, new Vector2(x,y), tempTile);
+                tileArray[x,y] = GameObject.Instantiate(tile, getWorldPosition(new Vector2(x,y)) + new Vector3(.5f, .5f, 0), Quaternion.identity).GetComponent<Tile>();
+                tileArray[x,y].name = $"Tile {x} {y}";
             }
         }
         Debug.DrawLine(getWorldPosition(new Vector2(0, height)), getWorldPosition(new Vector2(width, height)), Color.black, 10000f); 

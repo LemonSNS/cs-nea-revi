@@ -9,21 +9,19 @@ public class Card : MonoBehaviour
     public int cost;
     public Character target;
     public cardLocation cardLocation;
+    public int upgradeTier = 0;
+    [SerializeField] public List<Action> actionList = new List<Action>(); //glad to remember lists are mostly what I need here.
 
+    void Awake(){
+        actionList.Add(new chuckRockAction(owner, damage));
+        Debug.Log(actionQueue);
+    }
     public void cardPlayed(){
         if (owner.energy > 0 && activeCharacterController.Instance.activeCharacter == owner){
-            for (int i = Mathf.FloorToInt(owner.gridPosition.x); i < owner.combatGrid.width; i++){
-                target = combatGridManager.Instance.getCharacterFromTile(new Vector2 (i, owner.gridPosition.y));
-                Debug.Log(target);
-                if (target != null && target.playerTeam == false){
-                    target.takeDamage(damage);
-                }
-            }
             owner.energy -= cost;
+            //add to actionqueue or whatever in the manager later. First figure out if acitons work.
+            actionList[0].act();
         }
-    }
-    public void OnMouseOver(){
-        
     }
 }
 

@@ -397,6 +397,7 @@ MonoBehaviour:
   gridPosition: {x: 10, y: 3}
   playerTeam: 0
   deck: []
+  damagePopupCanvas: {fileID: 2779576001059229644, guid: 4d3b30af1cd46a94cb27378dc12104be, type: 3}
 --- !u!1 &6678086935875858527
 GameObject:
   m_ObjectHideFlags: 0

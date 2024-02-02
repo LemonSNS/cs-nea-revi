@@ -22,6 +22,8 @@ public class Character : MonoBehaviour
     public bool playerTeam;
     public Dictionary<string, dynamic> statusEffects;
     public Card[] deck;
+    [SerializeField] private damageTextController damagePopupCanvas;
+    private damageTextController newDamagePopupCanvas;
 
     void Awake(){
         combatManager.combatStateChanged += combatPhaseChanged;
@@ -62,6 +64,8 @@ public class Character : MonoBehaviour
 
     public void takeDamage(int damage){
         health -= damage;
+        newDamagePopupCanvas = Instantiate(damagePopupCanvas, this.transform.position, Quaternion.identity, this.transform);
+        newDamagePopupCanvas.damageText.text = $"-{damage}";
         Debug.Log("Damage done");
     }
 }

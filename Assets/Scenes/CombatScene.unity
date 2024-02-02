@@ -180,6 +180,7 @@ MonoBehaviour:
   cost: 1
   target: {fileID: 0}
   cardLocation: 0
+  upgradeTier: 0
 --- !u!114 &105951590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -654,6 +655,7 @@ MonoBehaviour:
   cost: 1
   target: {fileID: 0}
   cardLocation: 0
+  upgradeTier: 0
 --- !u!114 &289871356
 MonoBehaviour:
   m_ObjectHideFlags: 0

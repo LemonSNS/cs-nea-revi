@@ -85,7 +85,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &5312621432458138243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116,11 +116,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageText: {fileID: 7618335220507236044}
-  fadeLength: 1
+  fadeLength: 2
   initialPositon: {x: 0, y: 0, z: 0}
-  finalPosition: {x: 0, y: 0, z: 0}
-  intialColor: {r: 0, g: 0, b: 0, a: 0}
-  finalColor: {r: 0, g: 0, b: 0, a: 0}
+  finalPosition: {x: 0, y: -0.15, z: -0.01}
+  initialColor: {r: 1, g: 0, b: 0, a: 1}
+  finalColor: {r: 1, g: 0, b: 0, a: 0}
 --- !u!1 &9084855686965226945
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 132290542893267071}
   - component: {fileID: 2385165522308071264}
   - component: {fileID: 7618335220507236044}
+  - component: {fileID: 4094068184736641600}
   m_Layer: 5
   m_Name: damageTextTest
   m_TagString: Untagged
@@ -255,3 +256,18 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!114 &4094068184736641600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9084855686965226945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 1, g: 1, b: 1, a: 1}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1

@@ -9,11 +9,11 @@ public class endTurnButtonScript : MonoBehaviour
     public Button endTurnButton;
 
     void Awake() {
-        combatManager.combatStateChanged += combatPhase;
+        combatManager.combatStateChanged.AddListener(combatPhase);
     }
 
     void OnDestroy() {
-        combatManager.combatStateChanged -= combatPhase;
+        combatManager.combatStateChanged.RemoveListener(combatPhase);
     }
 
     public void update(){

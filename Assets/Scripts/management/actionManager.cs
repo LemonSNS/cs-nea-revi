@@ -1,15 +1,17 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
+public class actionEvent : UnityEvent<actionType>{}
 public class actionManager : MonoBehaviour
 {
+    public static actionEvent preActionInvoke;
+    public static actionEvent postActionInvoke;
     private List<Action> actionQueue = new List<Action>(); // I call it a queue, but it's not the CS textbook definition of a queue. 
     public Action currentAction;
     public static actionManager Instance;
-    public static event Action<actionType> preCardInvoke;
-    public static event Action<actionType> postCardInvoke;
-
     void Awake(){
         if (Instance != null){
             Debug.Log("More than one actionManager active. What did you do??? Continued playing may break the game.");
@@ -17,7 +19,8 @@ public class actionManager : MonoBehaviour
         Instance = this;
 
         currentAction = new Action();
-        //an empty action is produced to avoid null errors
+        currentAction.isDone = true;
+        //an empty action is produced at the start to avoid null errors
     }
 
     void Update()
@@ -26,9 +29,9 @@ public class actionManager : MonoBehaviour
             currentAction = nextAction();
         }
         else if (!currentAction.isDone){
-            preCardInvoke?.Invoke(currentAction.actionType);
+            preActionInvoke?.Invoke(currentAction.actionType);
             currentAction.act();
-            postCardInvoke?.Invoke(currentAction.actionType);
+            postActionInvoke?.Invoke(currentAction.actionType);
         }
     }
 

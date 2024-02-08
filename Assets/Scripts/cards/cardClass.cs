@@ -14,7 +14,6 @@ public class Card : MonoBehaviour
 
     void Awake(){
         actionList.Add(new chuckRockAction(owner, damage));
-        Debug.Log(actionList);
     }
     public void cardPlayed(){
         if (owner.energy > 0 && activeCharacterController.Instance.activeCharacter == owner){

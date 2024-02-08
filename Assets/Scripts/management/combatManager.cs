@@ -1,17 +1,20 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using System;
 
+public class combatEvent : UnityEvent<combatState> {}
 public class combatManager : MonoBehaviour
 {
 
     public static combatManager Instance;
     public combatState state;
-    public static event Action<combatState> combatStateChanged;
+    public static combatEvent combatStateChanged;
 
     void Awake(){
         Instance = this;
+        combatStateChanged = new combatEvent();
     }
 
     void Start(){

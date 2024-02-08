@@ -26,11 +26,11 @@ public class Character : MonoBehaviour
     private damageTextController newDamagePopupCanvas;
 
     void Awake(){
-        combatManager.combatStateChanged += combatPhaseChanged;
+        combatManager.combatStateChanged.AddListener(combatPhaseChanged);
     }
 
     void OnDestroy() {
-        combatManager.combatStateChanged -= combatPhaseChanged;
+        combatManager.combatStateChanged.RemoveListener(combatPhaseChanged);
     }
 
     // Start is called before the first frame update

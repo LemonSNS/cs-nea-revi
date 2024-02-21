@@ -10,15 +10,19 @@ public class chuckRockAction : Action
     public chuckRockAction(Character owner, int damage){
         this.owner = owner;
         this.damage = damage;
+        name = "Chuck a Rock";
     }
 
     public override void act(){
         for (int i = Mathf.FloorToInt(owner.gridPosition.x); i < owner.combatGrid.width; i++){
             target = combatGridManager.Instance.getCharacterFromTile(new Vector2 (i, owner.gridPosition.y));
-            Debug.Log(target);
+            //Debug.Log(target);
             if (target != null && target.playerTeam == false){
                 target.takeDamage(damage);
+                this.isDone = true;
+                return;
             }
         }
+        this.isDone = true;
     }
 }

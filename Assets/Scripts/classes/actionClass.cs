@@ -7,10 +7,15 @@ public class Action//the actionClass.cs file only exists for the sake of not hav
     public actionType actionType;
     public Character owner;
     public Character target;
-    public bool isDone;
+    public bool isDone = false;
+    public string name = "Empty Action [For testing purposes.]";
 
     public virtual void act(){
         Debug.Log("Something's gone HORRIBLY wrong if you're seeing this somehow.");
+    }
+
+    public override string ToString(){
+        return name;
     }
 }
 

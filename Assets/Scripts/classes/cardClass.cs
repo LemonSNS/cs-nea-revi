@@ -15,11 +15,13 @@ public class Card : MonoBehaviour
     void Awake(){
         actionList.Add(new chuckRockAction(owner, damage));
     }
+    
     public void cardPlayed(){
         if (owner.energy > 0 && activeCharacterController.Instance.activeCharacter == owner){
             owner.energy -= cost;
             //add to actionqueue or whatever in the manager later. First figure out if acitons work.
-            actionList[0].act();
+            Debug.Log(actionList[0]);
+            actionManager.Instance.addToTop(actionList);
         }
     }
 }

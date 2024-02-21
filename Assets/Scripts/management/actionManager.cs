@@ -12,12 +12,13 @@ public class actionManager : MonoBehaviour
     private List<Action> actionQueue = new List<Action>(); // I call it a queue, but it's not the CS textbook definition of a queue. 
     public Action currentAction;
     public static actionManager Instance;
+    private bool resolving; 
+
     void Awake(){
         if (Instance != null){
             Debug.Log("More than one actionManager active. What did you do??? Continued playing may break the game.");
         }
         Instance = this;
-
         currentAction = new Action();
         currentAction.isDone = true;
         //an empty action is produced at the start to avoid null errors
@@ -25,23 +26,50 @@ public class actionManager : MonoBehaviour
 
     void Update()
     {
-        if (actionQueue.Count != 0 && currentAction.isDone){
-            currentAction = nextAction();
-        }
-        else if (!currentAction.isDone){
-            preActionInvoke?.Invoke(currentAction.actionType);
-            currentAction.act();
-            postActionInvoke?.Invoke(currentAction.actionType);
-        }
+        if (!resolving){
+            if (actionQueue.Count != 0 && currentAction.isDone){
+                currentAction = nextAction();
+                Debug.Log("Action cycled.");
+                Debug.Log(currentAction.isDone);
+            }
+            else if (!currentAction.isDone){
+                StartCoroutine(resolveAction());
+                Debug.Log("Action resolved.");
+            }
+            // the conditions are intentionally non-exhaustive, because
+        }//otherwise we'd have an underflow/null/index error in nextAction(); 
+    }
+
+    private IEnumerator resolveAction(){
+        resolving = true;
+        preActionInvoke?.Invoke(currentAction.actionType);
+        currentAction.act();
+        postActionInvoke?.Invoke(currentAction.actionType);
+        yield return new WaitForSeconds(1);
+        resolving = false;
     }
 
     public void addToBottom(List<Action> actionList){
         actionQueue.InsertRange(0, actionList);
+        string debugString = "[";
+        for (int i = 0; i<actionQueue.Count; i++){
+            debugString += actionQueue[i].ToString();
+            if (i != actionQueue.Count-1){debugString += ", ";}
+            else {debugString += "]";}
+        }
+        Debug.Log(debugString);
     }
-
     public void addToTop(List<Action> actionList){
-        actionQueue.AddRange(actionList); //I could just use the AddRange(action); whenever I need to
-    } // but doing this allows me to add a bunch more clarity on what's going on.
+        string debugString = "[";
+        actionQueue.AddRange(actionList);
+        for (int i = 0; i<actionQueue.Count; i++){
+            debugString += actionQueue[i].ToString();
+            if (i != actionQueue.Count-1){debugString += ", ";}
+            else {debugString += "]";}
+        }
+        Debug.Log(debugString);
+        //I could just use the AddRange(action); whenever I need to but
+    }   //doing this allows me to add a bunch more clarity on what's going on.
 
     public void clearQueue(){
         actionQueue.Clear(); //similar reasoning to above.

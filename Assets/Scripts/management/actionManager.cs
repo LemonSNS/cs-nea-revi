@@ -29,15 +29,14 @@ public class actionManager : MonoBehaviour
         if (!resolving){
             if (actionQueue.Count != 0 && currentAction.isDone){
                 currentAction = nextAction();
-                Debug.Log("Action cycled.");
-                Debug.Log(currentAction.isDone);
+                currentAction.isDone = false;
             }
             else if (!currentAction.isDone){
                 StartCoroutine(resolveAction());
-                Debug.Log("Action resolved.");
+                currentAction.isDone = true;
             }
             // the conditions are intentionally non-exhaustive, because
-        }//otherwise we'd have an underflow/null/index error in nextAction(); 
+        }   //otherwise we'd have an underflow/null/index error in nextAction(); 
     }
 
     private IEnumerator resolveAction(){

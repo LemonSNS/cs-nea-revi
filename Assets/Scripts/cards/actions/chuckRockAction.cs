@@ -19,10 +19,8 @@ public class chuckRockAction : Action
             //Debug.Log(target);
             if (target != null && target.playerTeam == false){
                 target.takeDamage(damage);
-                this.isDone = true;
                 return;
             }
         }
-        this.isDone = true;
     }
 }

@@ -12,6 +12,9 @@ public class activeCharacterController : MonoBehaviour
     private Vector3 mouseWorldPosition;
     private Vector3 mouseGridPosition;
     private Character tempCharacter;
+    public Card activeCard;
+    public bool momentumActive = false;
+    
     void Awake(){
         if (Instance != null){
             Debug.Log("More than one activeCharacterController active. What did you do??? Continued playing may break the game.");
@@ -19,9 +22,9 @@ public class activeCharacterController : MonoBehaviour
         Instance = this;
     }
 
-    // Update is called once per frame
     void Update()
     {
+        
         if (Vector3.Distance(activeCharacter.transform.position, activeCharacter.movePoint.position) == 0f && activeCharacter.energy != 0){
                 initialGridPosition = activeCharacter.gridPosition;
                 if(Input.GetKeyDown(KeyCode.W) && activeCharacter.gridPosition.y+1 < activeCharacter.combatGrid.height && combatGridManager.Instance.getCharacterFromTile(activeCharacter.gridPosition + new Vector2 (0, 1)) == null){
@@ -71,5 +74,9 @@ public class activeCharacterController : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void setActiveCard(Card activeCard){
+        this.activeCard = activeCard;
     }
 }

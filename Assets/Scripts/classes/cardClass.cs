@@ -29,14 +29,18 @@ public class Card : MonoBehaviour
     public Image cardIconHolder;
     public string cardIconFileLocation = "skill_icon_skchr_ctable_1";
     public string cardIconFileLocationMomentum = "skill_icon_skchr_cutter_1";
+    
     void Start(){
-        energyCostLabel.text = energyCost.ToString();
+        energyCostLabel.text = energyCost.ToString(); //setting the UI...
         momentumCostLabel.text = momentumCost.ToString();
+        activeCharacterController.momentumStateChanged.AddListener(updateMomentumText); //keep up w momentum
+        cardNameLabel.text = cardName; //the initial set, since it only updates when momentum is updated
+        cardDescriptionLabel.text = cardDescription;
+        cardIconHolder.sprite = Resources.Load<Sprite>(cardIconFileLocation);
     }
 
-    void Update(){  //be sure to change this to event-based later!!
-                    //constantly updating this is NOT good. 
-        if (activeCharacterController.Instance.momentumActive){
+    private void updateMomentumText(bool momentumActive){
+        if (momentumActive){
             cardNameLabel.text = cardNameMomentum;
             cardDescriptionLabel.text = cardDescriptionMomentum;
             cardIconHolder.sprite = Resources.Load<Sprite>(cardIconFileLocationMomentum);
@@ -45,15 +49,27 @@ public class Card : MonoBehaviour
             cardNameLabel.text = cardName;
             cardDescriptionLabel.text = cardDescription;
             cardIconHolder.sprite = Resources.Load<Sprite>(cardIconFileLocation);
-        }
+        }     
     }
 
     public virtual void cardSelected(){
-        Debug.Log("You shouldn't be seeing this. You've selected a blank card.");
+        if (owner.energy-energyCost >= 0 && activeCharacterController.Instance.activeCharacter == owner){
+            if (activeCharacterController.Instance.activeCard = this){
+                activeCharacterController.Instance.activeCard = null; 
+            } //player clicks on card again to deselect
+            else{
+                activeCharacterController.Instance.activeCard = this;
+            } //player can switch the active card
+        }   
     }
     
     public virtual void cardPlayed(){
-        Debug.Log("You shouldn't be seeing this. You've played a blank card.");
+        if (activeCharacterController.Instance.momentumActive){
+            actionManager.Instance.addToTop(momentumActionList);
+        }
+        else{
+            actionManager.Instance.addToTop(energyActionList);
+        }
     }
 }
 

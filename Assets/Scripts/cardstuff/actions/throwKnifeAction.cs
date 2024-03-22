@@ -2,15 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class chuckRockAction : Action
+public class ThrowKnifeAction : Action
 { //The most basic attack action I can think of at the moment. Might keep it in as a joke.
     private int damage = 1; //remember to make a calculateDamage globally accessible method at some point.
     public new actionType actionType = actionType.attack;
     
-    public chuckRockAction(Character owner, int damage){
+    public ThrowKnifeAction(Character owner, int damage){
         this.owner = owner;
         this.damage = damage;
-        name = "Chuck a Rock";
+        name = "Throw a Knife";
     }
 
     public override void act(){

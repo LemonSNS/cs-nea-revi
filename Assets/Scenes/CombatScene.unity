@@ -921,132 +921,17 @@ MonoBehaviour:
   allowActiveCharacterChange: 1
   activeCard: {fileID: 0}
   momentumActive: 0
---- !u!1001 &895156849
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 494725822505888392, guid: f1b22b91f5c975347af143aa8a8d2ed1, type: 3}
-      propertyPath: m_Name
-      value: emptyCard (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 6038354603581419479, guid: f1b22b91f5c975347af143aa8a8d2ed1, type: 3}
-      propertyPath: owner
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6038354603581419479, guid: f1b22b91f5c975347af143aa8a8d2ed1, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6038354603581419479, guid: f1b22b91f5c975347af143aa8a8d2ed1, type: 3}
-      propertyPath: cardNameLabel
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6038354603581419479, guid: f1b22b91f5c975347af143aa8a8d2ed1, type: 3}
-      propertyPath: cardIconHolder
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6038354603581419479, guid: f1b22b91f5c975347af143aa8a8d2ed1, type: 3}
-      propertyPath: energyCostLabel
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6038354603581419479, guid: f1b22b91f5c975347af143aa8a8d2ed1, type: 3}
-      propertyPath: momentumCostLabel
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 6038354603581419479, guid: f1b22b91f5c975347af143aa8a8d2ed1, type: 3}
-      propertyPath: cardDescriptionLabel
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7997555829995527810, guid: f1b22b91f5c975347af143aa8a8d2ed1, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 6.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7997555829995527810, guid: f1b22b91f5c975347af143aa8a8d2ed1, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -2.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7997555829995527810, guid: f1b22b91f5c975347af143aa8a8d2ed1, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.9838979
-      objectReference: {fileID: 0}
-    - target: {fileID: 7997555829995527810, guid: f1b22b91f5c975347af143aa8a8d2ed1, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7997555829995527810, guid: f1b22b91f5c975347af143aa8a8d2ed1, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7997555829995527810, guid: f1b22b91f5c975347af143aa8a8d2ed1, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7997555829995527810, guid: f1b22b91f5c975347af143aa8a8d2ed1, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7997555829995527810, guid: f1b22b91f5c975347af143aa8a8d2ed1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7997555829995527810, guid: f1b22b91f5c975347af143aa8a8d2ed1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7997555829995527810, guid: f1b22b91f5c975347af143aa8a8d2ed1, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6038354603581419479, guid: f1b22b91f5c975347af143aa8a8d2ed1, type: 3}
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 494725822505888392, guid: f1b22b91f5c975347af143aa8a8d2ed1, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 895156851}
-  m_SourcePrefab: {fileID: 100100000, guid: f1b22b91f5c975347af143aa8a8d2ed1, type: 3}
---- !u!1 &895156850 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 494725822505888392, guid: f1b22b91f5c975347af143aa8a8d2ed1, type: 3}
-  m_PrefabInstance: {fileID: 895156849}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &895156851
+--- !u!114 &895156851 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 8490405944226389990, guid: 3ac7cfb8801a43d408dfd2bd4498a600, type: 3}
+  m_PrefabInstance: {fileID: 5511594987142523294}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 895156850}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 30b248ae601071d45a4615f0b6a671a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  owner: {fileID: 0}
-  damage: 0
-  energyCost: 1
-  momentumCost: 1
-  upgraded: 0
-  cardName: Nihil
-  cardNameMomentum: Nihilist
-  cardDescription: This card is a test card, which uses the base Card class. It does
-    absolutely nothing. Other than spend energy.
-  cardDescriptionMomentum: The Nihilistic worldview saps your motivation and energy
-    further. Why are you playing this card again?
-  cardLocation: 0
-  target: {fileID: 0}
-  cardNameLabel: {fileID: 0}
-  cardDescriptionLabel: {fileID: 0}
-  energyCostLabel: {fileID: 0}
-  momentumCostLabel: {fileID: 0}
-  cardIconHolder: {fileID: 0}
-  cardIconFileLocation: skill_icon_skchr_ctable_1
-  cardIconFileLocationMomentum: skill_icon_skchr_cutter_1
 --- !u!1 &1124562849
 GameObject:
   m_ObjectHideFlags: 0
@@ -3870,6 +3755,95 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59bae910bb696074a960c0e22afbef20, type: 3}
+--- !u!1001 &5511594987142523294
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 408565940344436431, guid: 3ac7cfb8801a43d408dfd2bd4498a600, type: 3}
+      propertyPath: m_Name
+      value: throwKnifeCard
+      objectReference: {fileID: 0}
+    - target: {fileID: 2235522016740190374, guid: 3ac7cfb8801a43d408dfd2bd4498a600, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2235522016740190374, guid: 3ac7cfb8801a43d408dfd2bd4498a600, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2235522016740190374, guid: 3ac7cfb8801a43d408dfd2bd4498a600, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 895156851}
+    - target: {fileID: 2235522016740190374, guid: 3ac7cfb8801a43d408dfd2bd4498a600, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2235522016740190374, guid: 3ac7cfb8801a43d408dfd2bd4498a600, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: cardPlayed
+      objectReference: {fileID: 0}
+    - target: {fileID: 2235522016740190374, guid: 3ac7cfb8801a43d408dfd2bd4498a600, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ThrowKnifeCard, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 2235522016740190374, guid: 3ac7cfb8801a43d408dfd2bd4498a600, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 8490405944226389990, guid: 3ac7cfb8801a43d408dfd2bd4498a600, type: 3}
+      propertyPath: owner
+      value: 
+      objectReference: {fileID: 176359614}
+    - target: {fileID: 8730154829706707955, guid: 3ac7cfb8801a43d408dfd2bd4498a600, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 8730154829706707955, guid: 3ac7cfb8801a43d408dfd2bd4498a600, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 8730154829706707955, guid: 3ac7cfb8801a43d408dfd2bd4498a600, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.9838979
+      objectReference: {fileID: 0}
+    - target: {fileID: 8730154829706707955, guid: 3ac7cfb8801a43d408dfd2bd4498a600, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8730154829706707955, guid: 3ac7cfb8801a43d408dfd2bd4498a600, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8730154829706707955, guid: 3ac7cfb8801a43d408dfd2bd4498a600, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8730154829706707955, guid: 3ac7cfb8801a43d408dfd2bd4498a600, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8730154829706707955, guid: 3ac7cfb8801a43d408dfd2bd4498a600, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8730154829706707955, guid: 3ac7cfb8801a43d408dfd2bd4498a600, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8730154829706707955, guid: 3ac7cfb8801a43d408dfd2bd4498a600, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3ac7cfb8801a43d408dfd2bd4498a600, type: 3}
 --- !u!1001 &8419119904212751518
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4059,5 +4033,5 @@ SceneRoots:
   - {fileID: 1163223066}
   - {fileID: 519420032}
   - {fileID: 8419119904212751518}
-  - {fileID: 895156849}
+  - {fileID: 5511594987142523294}
   - {fileID: 495852183}

@@ -29,8 +29,12 @@ public class Card : MonoBehaviour
     public Image cardIconHolder;
     public string cardIconFileLocation = "skill_icon_skchr_ctable_1";
     public string cardIconFileLocationMomentum = "skill_icon_skchr_cutter_1";
+    public List<Vector2> tileHighlightLocation = new List<Vector2>();
     
     void Start(){
+        if (tileHighlightLocation.Count == 0){
+            tileHighlightLocation.Add(new Vector2(0,0));
+        }
         energyCostLabel.text = energyCost.ToString(); //setting the UI...
         momentumCostLabel.text = momentumCost.ToString();
         activeCharacterController.momentumStateChanged.AddListener(updateMomentumText); //keep up w momentum
@@ -52,23 +56,54 @@ public class Card : MonoBehaviour
         }     
     }
 
-    public virtual void cardSelected(){
-        if (owner.energy-energyCost >= 0 && activeCharacterController.Instance.activeCharacter == owner){
-            if (activeCharacterController.Instance.activeCard = this){
-                activeCharacterController.Instance.activeCard = null; 
-            } //player clicks on card again to deselect
-            else{
-                activeCharacterController.Instance.activeCard = this;
+    public void cardSelected(){
+        
+        if (owner.energy-energyCost >= 0 && activeCharacterController.Instance.activeCharacter == owner)
+        {   
+            if (activeCharacterController.Instance.momentumActive && owner.momentum-momentumCost<0){
+                return;
+            }
+            else
+            {
+                if (activeCharacterController.Instance.activeCard == this){
+                    Debug.Log("trigger");
+                    cardPlayed();
+                }
+                else{
+                    Debug.Log("trigger2");
+                    activeCharacterController.Instance.setActiveCard(null);
+                    activeCharacterController.Instance.setActiveCard(this);
+                }
             } //player can switch the active card
         }   
     }
-    
-    public virtual void cardPlayed(){
+
+    public void cardPlayed(){
+        owner.energy-= energyCost;
         if (activeCharacterController.Instance.momentumActive){
+            owner.momentum -= momentumCost;
             actionManager.Instance.addToTop(momentumActionList);
         }
         else{
             actionManager.Instance.addToTop(energyActionList);
+        }
+        activeCharacterController.Instance.setActiveCard(null);
+    }
+
+    void OnMouseOver(){ //I could use onmouseenter, but that means that things might not
+                        //work proeprly if the character moves whilst the card is hovered.
+        foreach (Vector2 tileToHighlight in tileHighlightLocation){
+            if (combatGridManager.Instance.combatGrid.getTile(owner.gridPosition + tileToHighlight) != null){
+                combatGridManager.Instance.combatGrid.getTile(owner.gridPosition + tileToHighlight).targetedByAlly = true;
+            }   
+        }
+    }
+
+    void OnMouseExit(){
+        foreach (Vector2 tileToHighlight in tileHighlightLocation){
+            if (combatGridManager.Instance.combatGrid.getTile(owner.gridPosition + tileToHighlight) != null){
+                combatGridManager.Instance.combatGrid.getTile(owner.gridPosition + tileToHighlight).targetedByAlly = false;
+            }
         }
     }
 }

@@ -11,6 +11,9 @@ public class combatManager : MonoBehaviour
     public static combatManager Instance;
     public combatState state;
     public static combatEvent combatStateChanged;
+    public List<Character> allyTeam = new List<Character>();
+    public List<Character> enemyTeam = new List<Character>();
+
 
     void Awake(){
         Instance = this;
@@ -18,6 +21,7 @@ public class combatManager : MonoBehaviour
     }
 
     void Start(){
+        updateCombatState(combatState.startCombat);
         updateCombatState(combatState.playerTurn);
     }
 

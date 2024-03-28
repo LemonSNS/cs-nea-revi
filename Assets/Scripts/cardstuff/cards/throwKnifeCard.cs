@@ -17,5 +17,8 @@ public class ThrowKnifeCard : Card
         cardDescriptionMomentum = $"A hunter knows their target's weak spots. Deal {damage + 300} instead.";
         cardIconFileLocation = "skill_icon_skchr_ctable_1";
         cardIconFileLocationMomentum = "skill_icon_skchr_cutter_1";
+        for (int i=1; i<13; i++){
+            tileHighlightLocation.Add(new Vector2(i,0));
+        }
     }
 }

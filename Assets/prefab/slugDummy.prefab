@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &412890745800502213
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1112127659500725246}
+  m_Layer: 0
+  m_Name: deckHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1112127659500725246
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 412890745800502213}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.26027346, y: 0.14049014, z: -0.0018463712}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3664272243240269571}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6399290147746868080
 GameObject:
   m_ObjectHideFlags: 0
@@ -333,6 +364,7 @@ Transform:
   m_Children:
   - {fileID: 4137472276926915031}
   - {fileID: 4862380060254419590}
+  - {fileID: 1112127659500725246}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6422617396728290988
@@ -446,7 +478,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 900
   maxHealth: 1200
-  momentum: 1
+  momentum: 0
   maxMomentum: 5
   energy: 6
   maxEnergy: 6
@@ -454,11 +486,16 @@ MonoBehaviour:
   momentumCounter: {fileID: 4714067234882386808}
   energyCounter: {fileID: 559110147666618007}
   movePoint: {fileID: 4137472276926915031}
-  characterID: 0
+  characterID: 1
   gridPosition: {x: 0, y: 0}
   playerTeam: 1
   deck: []
+  combatDeck: []
+  hand: []
+  discardPile: []
+  exhaustPile: []
   damagePopupCanvas: {fileID: 2779576001059229644, guid: 4d3b30af1cd46a94cb27378dc12104be, type: 3}
+  deckHolder: {fileID: 1112127659500725246}
 --- !u!1 &8674599579904801356
 GameObject:
   m_ObjectHideFlags: 0
@@ -536,7 +573,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_UiScaleMode: 0
-  m_ReferencePixelsPerUnit: 100
+  m_ReferencePixelsPerUnit: 16
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
@@ -544,7 +581,7 @@ MonoBehaviour:
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
-  m_DynamicPixelsPerUnit: 1
+  m_DynamicPixelsPerUnit: 16
   m_PresetInfoIsWorld: 1
 --- !u!114 &3164375401073396485
 MonoBehaviour:

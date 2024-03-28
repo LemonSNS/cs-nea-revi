@@ -9,7 +9,7 @@ public class actionManager : MonoBehaviour
 {
     public static actionEvent preActionInvoke;
     public static actionEvent postActionInvoke;
-    private List<Action> actionQueue = new List<Action>(); // I call it a queue, but it's not the CS textbook definition of a queue. 
+    public List<Action> actionQueue = new List<Action>(); // I call it a queue, but it's not the CS textbook definition of a queue. 
     public Action currentAction;
     public static actionManager Instance;
     private bool resolving; 
@@ -33,7 +33,6 @@ public class actionManager : MonoBehaviour
             }
             else if (!currentAction.isDone){
                 StartCoroutine(resolveAction());
-                currentAction.isDone = true;
             }
             // the conditions are intentionally non-exhaustive, because
         }   //otherwise we'd have an underflow/null/index error in nextAction(); 
@@ -44,8 +43,9 @@ public class actionManager : MonoBehaviour
         preActionInvoke?.Invoke(currentAction.actionType);
         currentAction.act();
         postActionInvoke?.Invoke(currentAction.actionType);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(0.1f);
         resolving = false;
+        currentAction.isDone = true;
     }
 
     public void addToBottom(List<Action> actionList){

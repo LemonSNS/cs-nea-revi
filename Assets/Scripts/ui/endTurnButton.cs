@@ -16,9 +16,6 @@ public class endTurnButtonScript : MonoBehaviour
         combatManager.combatStateChanged.RemoveListener(combatPhase);
     }
 
-    public void update(){
-    }
-
     public void endTurn(){
         combatManager.Instance.updateCombatState(combatState.enemyTurn);
         combatManager.Instance.updateCombatState(combatState.playerTurn);

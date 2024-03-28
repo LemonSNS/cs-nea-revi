@@ -1,13 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
+public class characterMoveEvent : UnityEvent<string>{}
+//There's no parameter actually needed for this, at the moment, so I've set it to string for now.
 public class combatGridManager : MonoBehaviour
 {
 
     [SerializeField] private GameObject tilePrefab;
     public Grid combatGrid;
     public static combatGridManager Instance;
+    public static characterMoveEvent characterHasMoved;
 
     void Awake(){
         if (Instance != null){
@@ -15,6 +19,7 @@ public class combatGridManager : MonoBehaviour
         }
         Instance = this;
         combatGrid = new Grid(13, 6, 1, new Vector3(2f, -0.5f, 0f), tilePrefab);
+        characterHasMoved = new characterMoveEvent();
     }
 
     public void setCharacterToTile(Vector2 gridPosition,Character character){
@@ -37,5 +42,7 @@ public class combatGridManager : MonoBehaviour
     public void moveCharacter(Vector2 initialGridPosition, Vector2 finalGridPosition, Character character){
         clearCharacterFromTile(initialGridPosition);
         setCharacterToTile(finalGridPosition, character);
+        characterHasMoved?.Invoke("");
+        activeCharacterController.Instance.setActiveCard(null);
     }
 }

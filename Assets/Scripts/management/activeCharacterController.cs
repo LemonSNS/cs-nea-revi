@@ -32,6 +32,9 @@ public class activeCharacterController : MonoBehaviour
             momentumActive = !momentumActive;
             momentumStateChanged?.Invoke(momentumActive);
         }
+        if (Input.GetMouseButtonDown(2)){ //middle click to cancel current card
+            setActiveCard(null);
+        }
         if (Vector3.Distance(activeCharacter.transform.position, activeCharacter.movePoint.position) == 0f && activeCharacter.energy != 0){
             initialGridPosition = activeCharacter.gridPosition;
             if(Input.GetKeyDown(KeyCode.W) && activeCharacter.gridPosition.y+1 < activeCharacter.combatGrid.height && combatGridManager.Instance.getCharacterFromTile(activeCharacter.gridPosition + new Vector2 (0, 1)) == null){
@@ -81,7 +84,13 @@ public class activeCharacterController : MonoBehaviour
         }
     }
 
-    public void setActiveCard(Card activeCard){
-        this.activeCard = activeCard;
+    public void setActiveCard(Card pActiveCard){
+        if (activeCard != null){
+            activeCard.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+        }
+        activeCard = pActiveCard;
+        if (activeCard != null){ //could do without this, but this just shuts unity up about nullreferenceexception errors
+            activeCard.transform.localScale = new Vector3(1.1f, 1.1f, 1.0f);
+        }
     }
 }

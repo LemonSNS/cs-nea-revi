@@ -22,16 +22,10 @@ public class Grid
         tileArray = new Tile[width, height];
         for (int x = 0; x < width; x++){
             for (int y = 0; y < height; y++){
-                Debug.DrawLine(getWorldPosition(new Vector2(x, y)), getWorldPosition(new Vector2(x, y + 1)), Color.black, 10000f);
-                Debug.DrawLine(getWorldPosition(new Vector2(x, y)), getWorldPosition(new Vector2(x + 1, y)), Color.black, 10000f);
-                
                 tileArray[x,y] = GameObject.Instantiate(tile, getWorldPosition(new Vector2(x,y)) + new Vector3(.5f, .5f, 0), Quaternion.identity).GetComponent<Tile>();
                 tileArray[x,y].name = $"Tile {x} {y}";
             }
         }
-        Debug.DrawLine(getWorldPosition(new Vector2(0, height)), getWorldPosition(new Vector2(width, height)), Color.black, 10000f); 
-        Debug.DrawLine(getWorldPosition(new Vector2(width, 0)), getWorldPosition(new Vector2(width, height)), Color.black, 10000f);
-
     }
     
     public Vector3 getWorldPosition(Vector2 gridPosition){
@@ -44,6 +38,9 @@ public class Grid
     }
 
     public Tile getTile(Vector2 gridPosition){
+        if (gridPosition.x < 0 || gridPosition.y <0 || gridPosition.x >12 || gridPosition.y >5){
+            return null;
+        }
         return tileArray[Mathf.FloorToInt(gridPosition.x), Mathf.FloorToInt(gridPosition.y)];
     }
 }
